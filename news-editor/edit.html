@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+	<head>
+	
+		<meta charset="utf-8">
+	
+		<title>
+			Edição de Notícia
+		</title>
+	</head>
+	<body>
+		<form action="edit.php" method="post" enctype="multipart/form-data">
+			<h1> Edição de Notícia </h1>
+			<div>
+				<label for="title"> Título: </label>
+				<input type="text" id="title" name="news_name" required="true">
+			</div>
+			
+			<div>
+				<label for="summary"> Sumário: </label>
+				<input type="text" id="summary" name="news_summary">
+			</div>
+			
+			<div>
+				<label for="body"> Corpo: </label>
+				<textarea id="body" name="news_body" required="true"></textarea>
+			</div>
+			
+			<div>
+				<label for="date"> Data: </label>
+				<input type="date" id="date" name="news_date" required="true">
+			</div>
+			
+			<div>
+				<label for="category"> Categoria:  (1+ categorias necessárias)</label>
+				<select id="title" name="news_category[]" multiple="true" required="true">
+				<!-- Fill out option values from DB (probably with Javascript) -->
+					<option value="teste"> Teste </option>
+				</select>
+			</div>
+			
+			<div>
+				<label for="picture"> Seleccione uma imagem a carregar para a figura da notícia: </label>
+				<input type="file" id="picture" name="news_picture" accept="image/*">
+			</div>
+			
+			<input type="submit" name="save_news" value="Guardar">
+			<input type="submit" name="delete_news" value="Eliminar">
+			<input type="hidden" id="articleId" name="articleId" value="-1">
+		</form>
+	</body>
+</html>
